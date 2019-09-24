@@ -24,6 +24,14 @@ class MyTestCase(unittest.TestCase):
         assert coupon_calculations.calculate_order(15.99, 10, .15) == 13.35
         assert coupon_calculations.calculate_order(15.99, 10, .2) == 13.03
 
+    def test_price_under_between_thirty_fifty(self):
+        assert coupon_calculations.calculate_order(40, 5, .1) == 45.34
+        assert coupon_calculations.calculate_order(40, 5, .15) == 43.49
+        assert coupon_calculations.calculate_order(40, 5, .2) == 41.63
+        assert coupon_calculations.calculate_order(40, 10, .1) == 40.57
+        assert coupon_calculations.calculate_order(40, 10, .15) == 38.95
+        assert coupon_calculations.calculate_order(40, 10, .2) == 37.39
+
 
 if __name__ == '__main__':
     unittest.main()
