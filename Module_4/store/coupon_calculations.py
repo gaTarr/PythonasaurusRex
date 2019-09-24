@@ -66,6 +66,27 @@ def calculate_order(price, cash_coupon, percent_coupon):
                 return round((calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)) + 11.95), 2)
             else:
                 print("Invalid coupon Percentage.")
+    elif price > 50:
+        if cash_coupon == 5:
+            if percent_coupon == .1:
+                return round(calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)), 2)
+            elif percent_coupon == .15:
+                return round(calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)), 2)
+            elif percent_coupon == .2:
+                return round(calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)), 2)
+            else:
+                print("Invalid coupon Percentage.")
+        elif cash_coupon == 10:
+            if percent_coupon == .1:
+                return round(calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)), 2)
+            elif percent_coupon == .15:
+                return round(calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)), 2)
+            elif percent_coupon == .2:
+                return round(calculate_tax(calculate_subtotal(price, cash_coupon, percent_coupon)), 2)
+            else:
+                print("Invalid coupon Percentage.")
+    else:
+        print("Error handling for Price out of bounds")
 
 
 if __name__ == '__main__':

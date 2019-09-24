@@ -34,7 +34,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_price_over_fifty(self):
         assert coupon_calculations.calculate_order(70, 5, .1) == 62.01
-        assert coupon_calculations.calculate_order(70, 5, .15) == 58.57
+        assert coupon_calculations.calculate_order(70, 5, .15) == 58.56
         assert coupon_calculations.calculate_order(70, 5, .2) == 55.12
         assert coupon_calculations.calculate_order(70, 10, .1) == 57.24
         assert coupon_calculations.calculate_order(70, 10, .15) == 54.06
