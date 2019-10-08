@@ -6,8 +6,14 @@ Created: 10/07/2019"""
 def make_list():
     number_list = []
     for number in range(3):
-        number_input = int(get_input())
-        number_list.insert(number, number_input)
+        try:
+            number_input = int(get_input())
+            if number_input < 1 or number_input > 50:
+                raise ValueError
+        except ValueError as err:
+            raise ValueError
+        else:
+            number_list.insert(number, number_input)
     return number_list
 
 
@@ -21,4 +27,4 @@ def get_input():
 
 
 if __name__ == '__main__':
-    print(get_input())
+    print(make_list())
