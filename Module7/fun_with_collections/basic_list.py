@@ -4,12 +4,21 @@ Created: 10/07/2019"""
 
 
 def make_list():
-    pass
+    number_list = []
+    for number in range(3):
+        number_input = int(get_input())
+        number_list.insert(number, number_input)
+    return number_list
 
 
 def get_input():
-    pass
+    try:
+        user_input = int(input("Enter a number: "))
+    except ValueError as err:
+        raise ValueError
+    else:
+        return user_input
 
 
 if __name__ == '__main__':
-    pass
+    print(get_input())
