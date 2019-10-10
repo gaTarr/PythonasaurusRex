@@ -1,4 +1,6 @@
 import unittest
+from array import array
+
 from fun_with_collections import sort_and_search_array as ssa
 
 
@@ -17,7 +19,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_sort_list_sorted(self):
         test_input = [8, 11, 5]
-        expected_result = [5, 8, 11]
+        expected_result = array('b', [5, 8, 11])
         self.assertEqual(ssa.sort_array(test_input), expected_result)
 
 
