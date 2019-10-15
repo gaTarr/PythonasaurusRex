@@ -23,7 +23,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_found_e(self):
         with mock.patch('builtins.input', side_effect=['E']):
-            assert switch_average() == 'Invalid Input'
+            assert switch_average() == 'Invalid Key'
 
 
 if __name__ == '__main__':

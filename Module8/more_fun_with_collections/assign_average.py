@@ -4,8 +4,19 @@ Created: 10/14/2019"""
 
 
 def switch_average():
-    pass
+    """ This prompts a user to select from a set of Keys
+    and returns the value associated with that key.  """
+    try:
+        search_value = input("Choose a Key from (A, B, C, D): ").upper()
+    except ValueError:
+        print("Invalid Input")
+    return {
+        'A': 100,
+        'B': 200,
+        'C': 300,
+        'D': 400
+    }.get(search_value, 'Invalid Key')
 
 
 if __name__ == '__main__':
-    pass
+    print(switch_average())
