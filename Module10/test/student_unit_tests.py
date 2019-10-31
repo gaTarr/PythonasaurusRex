@@ -22,7 +22,7 @@ class MyTestCase(unittest.TestCase):
         assert student.gpa == 4.0
 
     def test_student_str(self):
-        self.assertEqual(str(self.student), 'Tarr, Greg has major CIS with gpa: 4.0')
+        self.assertEqual(str(self.student), 'Tarr, Greg has major CIS with gpa: 0.0')
 
     def test_object_not_created_error_last_name(self):
         with self.assertRaises(ValueError):
@@ -39,6 +39,13 @@ class MyTestCase(unittest.TestCase):
     def test_object_not_created_error_gpa(self):
         with self.assertRaises(ValueError):
             invalidStudent = s.Student('Tarr', 'Greg', 'CIS', '234')
+
+    def test_gpa_out_of_range(self):
+        with self.assertRaises(ValueError):
+            invalidStudent = s.Student('Tarr', 'Greg', 'CIS', 4.1)
+        with self.assertRaises(ValueError):
+            invalidStudent2 = s.Student('Tarr', 'Greg', 'CIS', -1)
+
 
 
 if __name__ == '__main__':
