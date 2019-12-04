@@ -83,30 +83,24 @@ def search_for_anagram(sorted_anagram):
         search_file.close()
 
 
-
-
-# def create_dictionary_file():
+def create_dictionary_file():
     """This is for use one time only, to create the dictionary file that
     this program will use.  I'll leave it included in the program for reference only.
     It will not be called by the program."""
-    # master_file = open("source/words_alpha.txt", "r")
-    # anagram_dictionary = {}
-    # # print(master_file.read())
-    #
-    # for line in master_file.readlines():
-    #     alphabetized_letters = format_input(line)
-    #     word_input = line.strip().lower()
-    #     # print(f'{line.strip()}: {alphabetized_letters} - {len(line.strip())}')
-    #     if alphabetized_letters in anagram_dictionary:
-    #         anagram_dictionary[alphabetized_letters].append(word_input)
-    #     else:
-    #         anagram_dictionary[alphabetized_letters] = [word_input]
-    #
-    # print(anagram_dictionary)
+    master_file = open("source/words_alpha.txt", "r")
+    anagram_dictionary = {}
 
-    # dictionary_file = open('/Users/grego/git/Python/PythonasaurusRex/FinalProject/source/anagramdict.obj', 'wb')
-    # pickle.dump(anagram_dictionary, dictionary_file)
-    # dictionary_file.close()
+    for line in master_file.readlines():
+        alphabetized_letters = format_input(line)
+        word_input = line.strip().lower()
+        if alphabetized_letters in anagram_dictionary:
+            anagram_dictionary[alphabetized_letters].append(word_input)
+        else:
+            anagram_dictionary[alphabetized_letters] = [word_input]
+
+    dictionary_file = open('/Users/grego/git/Python/PythonasaurusRex/FinalProject/source/anagramdict.obj', 'wb')
+    pickle.dump(anagram_dictionary, dictionary_file)
+    dictionary_file.close()
 
 
 if __name__ == '__main__':

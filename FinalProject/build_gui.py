@@ -6,6 +6,10 @@ from gui_functions import *
 
 
 def build_gui():
+    # Create Dictionary from Text
+    create_dictionary_file()
+
+    # Build GUI
     frame = t.Tk()
     frame.title('Anagram Solver')
     frame.geometry('500x210')
